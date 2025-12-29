@@ -130,7 +130,7 @@
     /* =======================
        Home Section
        ======================= */
-    .home { background: var(--bg-gradient-home); }
+    /* .home { background: var(--bg-gradient-home); }
     .home h1 { margin-bottom: 20px; font-size: 3.5rem; }
     .home p { font-size: 1.3rem; margin-bottom: 40px; }
     .home button {
@@ -158,6 +158,55 @@
     @media (max-width: 900px) {
       .social { display: none; }
       .home h1 { font-size: 2.5rem; margin-top: 50px; }
+    }*/
+    /* =======================
+       Home Section (팀 사진 배경 버전)
+       ======================= */
+    .home {
+      /* [중요] 'team_photo.jpg'를 실제 팀 사진 파일 이름으로 바꾸세요 */
+      background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), 
+                  url('twoK1_seatdown.jpeg'); 
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: #fff; /* 기본 글자색 흰색으로 변경 */
+    }
+
+    .home h1 { 
+      margin-bottom: 20px; 
+      font-size: 4rem; /* 조금 더 크게 강조 */
+      color: #ffffff;
+      text-shadow: 0 4px 10px rgba(0,0,0,0.3); /* 가독성을 위한 그림자 */
+    }
+
+    .home p { 
+      font-size: 1.4rem; 
+      margin-bottom: 40px; 
+      color: rgba(255, 255, 255, 0.9); /* 본문은 살짝 투명한 흰색 */
+      text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+
+    /* 버튼 스타일 유지 (배경이 어두워졌으므로 초록색이 더 잘 보입니다) */
+    .home button {
+      background-color: var(--primary-green);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 16px 40px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 4px 15px rgba(23, 188, 97, 0.3);
+    }
+    .home button:hover { 
+      background-color: #129e52; 
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 900px) {
+      .home h1 { font-size: 2.8rem; }
+      .home p { font-size: 1.1rem; }
     }
 
     /* =======================
