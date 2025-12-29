@@ -212,7 +212,7 @@
     /* =======================
        Team Section (Slider)
        ======================= */
-    /* .team { background-color: #f9f9f9; width: 100%; }
+    .team { background-color: #f9f9f9; width: 100%; }
     
     .team h2 {
         font-size: 1.8rem;
@@ -310,73 +310,6 @@
         padding: 30px 20px; 
       }
     } */
-
-      /* =========================================
-       People Section - 상단 인트로 압축 버전
-       ========================================= */
-    .team { 
-      padding-top: 60px !important; /* 상단 여백 최소화 */
-      justify-content: flex-start !important; 
-    }
-
-    /* 1. 인트로 구역 전체 높이 축소 */
-    .people-intro {
-      display: flex;
-      align-items: center;
-      gap: 20px; /* 좌우 간격 축소 */
-      margin-bottom: 10px; /* 아래 제목과의 간격 최소화 (가장 중요) */
-      width: 100%;
-    }
-
-    /* 2. 왼쪽 글씨 크기 및 여백 축소 */
-    .people-text { 
-      flex: 1; 
-      padding-right: 10px;
-    }
-    .people-text h1 {
-      font-size: 2rem !important; /* 제목 크기 대폭 축소 */
-      margin-bottom: 8px !important;
-    }
-    .people-text p {
-      font-size: 0.95rem; /* 본문 크기 축소 */
-      line-height: 1.4;
-      margin-bottom: 5px;
-    }
-    .people-text .sub-desc {
-      font-size: 0.85rem;
-      margin-bottom: 0;
-    }
-
-    /* 3. 오른쪽 이미지 높이 고정 (납작하게 변경) */
-    .people-image { 
-      flex: 1; 
-    }
-    .people-image img {
-      width: 100%;
-      max-height: 160px; /* 이미지 높이를 160px로 대폭 제한 */
-      border-radius: 12px;
-      object-fit: cover;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    }
-
-    /* 4. 첫 번째 섹션 제목(PI)의 상단 여백 제거 */
-    .team-title:first-of-type {
-      margin-top: 10px !important; 
-      font-size: 1.4rem; /* 제목도 살짝 작게 */
-    }
-
-    /* [모바일 대응] */
-    @media (max-width: 900px) {
-      .people-intro {
-        flex-direction: row; /* 모바일에서도 가로 유지 (공간 절약) */
-        align-items: center;
-        text-align: left;
-      }
-      .people-image { display: block; width: 40%; } /* 이미지를 옆에 작게 유지 */
-      .people-text h1 { font-size: 1.5rem !important; }
-      .people-text p { font-size: 0.8rem; }
-      .people-text .sub-desc { display: none; } /* 모바일에서 부연설명 생략 */
-    }
 
     /* =======================
        Research Section
