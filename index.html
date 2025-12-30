@@ -205,20 +205,23 @@
     }
     /* Home Section 내부의 컨테이너만 타겟팅 */
     .home .max-w-container {
-    /* 현재 중앙에서 150px만큼 더 아래로 밀어냅니다. */
-    /* 수치를 더 높이면 더 아래로 내려갑니다. (예: 200px, 20vh 등) */
-      padding-top: 500px; 
+      /* PC에서는 중앙보다 약간 아래로 (vh 단위를 써서 화면 비율에 맞춤) */
+      padding-top: 40vh; 
+      justify-content: flex-start; /* 중앙 정렬 해제하고 패딩으로 조절 */
     }
 
-    @media (max-width: 900px) {
+    /* @media (max-width: 900px) {
       .home h1 { font-size: 2.8rem; }
       .home p { font-size: 1.1rem; }
-    }
+    } */
       /* =========================================
        About Section (독립 섹션 스타일)
        ========================================= */
     .about {
+      /* 헤더 높이만큼 여백을 주어 글자가 가려지지 않게 함 */
+      padding-top: 80px !important;
       background-color: #fff;
+      overflow-y: auto !important; /* 내용이 많으면 내부 스크롤 허용 */
     }
 
     .about-content {
@@ -228,7 +231,7 @@
       gap: 40px;
       text-align: left;
       width: 100%;
-      height: 100%; /* 컨테이너 높이 꽉 채우기 */
+      height: auto; /* 고정 높이 해제 */
     }
 
     .about-text { flex: 1.0; }
@@ -258,6 +261,16 @@
       box-shadow: 0 15px 35px rgba(0,0,0,0.12);
       object-fit: cover;
     }
+
+    /* 슬라이더 높이를 PC에서 명시적으로 지정 */
+    .about-slider {
+      width: 100%;
+      height: 450px; /* PC 슬라이더 높이 */
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+    }
+
     .about-slider img {
       width: 100%;
       height: 100%;
@@ -269,10 +282,48 @@
     .about-slider .swiper-pagination-bullet-active {
       background: var(--primary-green);
     }
+
+      /* =========================================
+       [Mobile] 모바일 전용 레이아웃 최적화 
+       ========================================= */
     @media (max-width: 900px) {
-      .about-content { flex-direction: column; text-align: center; }
-      .about-slider { height: 250px; }
-      .about-image { width: 100%; max-width: 400px; }
+      /* 1. Home 모바일 패딩 축소 */
+      .home .max-w-container {
+        padding-top: 30vh; /* 모바일에서는 조금 덜 밀어내기 */
+      }
+      .home h1 { font-size: 2.5rem; }
+      .home p { font-size: 1.1rem; }
+
+      /* 2. About 모바일 레이아웃 */
+      .about {
+        padding-top: 100px !important; /* 모바일 헤더 대응 */
+        justify-content: flex-start !important;
+      }
+      .about-content {
+        flex-direction: column; /* 위아래로 배치 */
+        text-align: center;
+        gap: 20px;
+      }
+      .about-text h1 {
+        font-size: 2.2rem !important;
+        margin-bottom: 15px !important;
+        text-align: center !important;
+      }
+      .about-text p {
+        font-size: 1rem;
+        padding: 0 10px;
+      }
+
+      /* 3. About 슬라이더 모바일 높이 고정 (중요: 안 보임 방지) */
+      .about-image {
+        width: 100%;
+        max-width: 100%;
+        order: -1; /* 사진을 글보다 위로 올리고 싶다면 사용 (선택) */
+      }
+      .about-slider {
+        height: 280px; /* 모바일에서 사진이 확실히 보이게 높이 지정 */
+        margin-bottom: 20px;
+      }
     }
     
     /* =======================
