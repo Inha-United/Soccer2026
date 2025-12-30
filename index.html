@@ -128,39 +128,7 @@
     }
 
     /* =======================
-       Home Section (기존 원혁님꺼)
-       ======================= */
-    /* .home { background: var(--bg-gradient-home); }
-    .home h1 { margin-bottom: 20px; font-size: 3.5rem; }
-    .home p { font-size: 1.3rem; margin-bottom: 40px; }
-    .home button {
-      background-color: var(--primary-green);
-      color: white;
-      border: none;
-      border-radius: 8px;
-      padding: 14px 32px;
-      font-size: 1.1rem;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    .home button:hover { background-color: #129e52; }
-
-    .social {
-      position: fixed;
-      left: 40px; top: 50%;
-      transform: translateY(-50%);
-      display: flex; flex-direction: column; gap: 20px;
-      z-index: 99;
-    }
-    .social a { color: #6fcf97; font-size: 26px; }
-    .social a:hover { color: var(--primary-green); transform: scale(1.15); }
-    
-    @media (max-width: 900px) {
-      .social { display: none; }
-      .home h1 { font-size: 2.5rem; margin-top: 50px; }
-    }*/
-    /* =======================
-       Home Section (팀 사진 배경 버전)
+       Home Section (로봇 배경 버전)
        ======================= */
     .home {
       position: relative;
@@ -575,6 +543,27 @@
       .video-container { flex-direction: column; }
       .media video { width: 80%; margin-bottom: 20px; }
     } */
+
+    /* YouTube Card 스타일 */
+    .youtube-card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .youtube-card i {
+      font-size: 4.5rem;
+      color: #ff0000;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 50%;
+      padding: 18px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+      transition: transform 0.25s ease;
+    }
+
+    .youtube-card:hover i {
+      transform: scale(1.15);
+    }
 
     /* 기존 video-container 스타일을 media-grid로 변경 및 확장 */
     .media-grid {
@@ -1274,6 +1263,20 @@
             Your browser does not support video.
           </video>
         </div>
+        <!-- 유튜브 북마크 추가 -->
+        <a
+          href="https://www.youtube.com/watch?v=VIDEO_ID"
+          target="_blank"
+          class="media-item youtube-card"
+          style="
+            background-image: url('https://img.youtube.com/vi/VIDEO_ID/hqdefault.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+          "
+        >
+          <i class="fab fa-youtube"></i>
+        </a>
       </div>
     </section>
 
